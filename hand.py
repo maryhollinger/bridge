@@ -11,11 +11,11 @@ class Hand(object):
 	def __str__(self):
 		hand_string = '[ '
 		for card in self.cards:
-			hand_string += str(card) + ' '
+			hand_string += str(card) + ', '
 		hand_string += ']'
 		return hand_string
 
-	def value(self):
+	def points(self):
 		val = 0
 		for card in self.cards:
 			val += card.value()

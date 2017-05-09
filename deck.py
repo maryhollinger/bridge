@@ -17,7 +17,7 @@ class Deck(object):
 	def __str__(self):
 		deck_string = '[ '
 		for card in self.cards:
-			deck_string += str(card) + ' '
+			deck_string += str(card) + ', '
 		deck_string += ']'
 		return deck_string
 
