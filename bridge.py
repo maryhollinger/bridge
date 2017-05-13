@@ -11,6 +11,15 @@ def main():
 	p1 = Hand(hand_1)
 	print 'Player 1:'
 	print str(p1) + ' total points:' + str(p1.points())
+	print 'hearts points:' + str(p1.numSuitPoints('H'))
+	print 'spades points:' + str(p1.numSuitPoints('S'))
+	print 'num hearts:' + str(p1.numSuitCards('H'))
+	print 'num spades:' + str(p1.numSuitCards('S'))
+	hearts = p1.getSuitCards('H')
+	for card in hearts:
+		print card
+	print 'num singletons:' + str(p1.numSingletons())
+	print 'num voids:' + str(p1.numVoids())
 
 	hand_2 = test_deck.cards[13:26]
 	p2 = Hand(hand_2)

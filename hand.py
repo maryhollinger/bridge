@@ -15,7 +15,18 @@ class Hand(object):
 		hand_string += ']'
 		return hand_string
 
-	def cards =
+	# def __iter__(self):
+ #        return self
+
+ #    def next(self): # Python 3: def __next__(self)
+ #        if self.current > self.high:
+ #            raise StopIteration
+ #        else:
+ #            self.current += 1
+ #            return self.current - 1
+
+
+	def cards(self):
 		return self.cards
 
 	def points(self):
@@ -23,6 +34,79 @@ class Hand(object):
 		for card in self.cards:
 			val += card.value()
 		return val
+
+	def numSuitPoints(self, suit):
+		val = 0
+		for card in self.cards:
+			if (card.suit == suit):
+				val += card.value()
+		return val
+
+	def numSuitCards(self, suit):
+		val = 0
+		for card in self.cards:
+			if (card.suit == suit):
+				val += 1
+		return val
+
+	def getSuitCards(self, suit):
+		suitCards = []
+		for card in self.cards:
+			if (card.suit == suit):
+				suitCards.append(card)
+		return suitCards
+
+	def numSingletons(self):
+		val = 0
+		cCount = 0
+		dCount = 0
+		hCount = 0
+		sCount = 0
+		for card in self.cards:
+			if (card.suit == 'C'):
+				cCount += 1
+			elif (card.suit == 'D'):
+				dCount += 1
+			elif (card.suit == 'H'):
+				hCount += 1
+			else:
+				sCount += 1
+		if (cCount == 1):
+			val += 1
+		if (dCount == 1):
+			val += 1
+		if (hCount == 1):
+			val += 1
+		if (sCount == 1):
+			val += 1
+		return val
+
+	def numVoids(self):
+		val = 0
+		cCount = 0
+		dCount = 0
+		hCount = 0
+		sCount = 0
+		for card in self.cards:
+			if (card.suit == 'C'):
+				cCount += 1
+			elif (card.suit == 'D'):
+				dCount += 1
+			elif (card.suit == 'H'):
+				hCount += 1
+			else:
+				sCount += 1
+		if (cCount == 0):
+			val += 1
+		if (dCount == 0):
+			val += 1
+		if (hCount == 0):
+			val += 1
+		if (sCount == 0):
+			val += 1
+		return val
+
+
 
 def main():
 	print('A OK')
