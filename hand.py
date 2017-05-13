@@ -15,6 +15,9 @@ class Hand(object):
 		hand_string += ']'
 		return hand_string
 
+	def cards =
+		return self.cards
+
 	def points(self):
 		val = 0
 		for card in self.cards:
