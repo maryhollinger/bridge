@@ -31,6 +31,9 @@ class Round(object):
     print('adding bid: ' + str(newbid))
     self.bids.append(newbid)
 
+  def getBids(self):
+    return self.bids
+
 
 def main():
   test_round = Round()

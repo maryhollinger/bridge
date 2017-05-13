@@ -2,7 +2,7 @@ class Card(object):
 	"""
 	Represents a single playing card with 2-letters 'rank' + 'suit'.
 	"""
-	
+
 	ranks = '23456789TJQKA'
 	suits = 'CDHS'
 
