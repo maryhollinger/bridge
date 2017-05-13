@@ -20,21 +20,25 @@ def main():
 		print card
 	print 'num singletons:' + str(p1.numSingletons())
 	print 'num voids:' + str(p1.numVoids())
+	print 'is balanced?:' + str(p1.isBalanced())
 
 	hand_2 = test_deck.cards[13:26]
 	p2 = Hand(hand_2)
 	print 'Player 2:'
 	print str(p2) + ' total points:' + str(p2.points())
+	print 'is balanced?:' + str(p2.isBalanced())
 
 	hand_3 = test_deck.cards[26:39]
 	p3 = Hand(hand_3)
 	print 'Player 3:'
 	print str(p3) + ' total points:' + str(p3.points())
+	print 'is balanced?:' + str(p3.isBalanced())
 
 	hand_4 = test_deck.cards[39:52]
 	p4 = Hand(hand_4)
 	print 'Player 4:'
 	print str(p4) + ' total points:' + str(p4.points())
+	print 'is balanced?:' + str(p4.isBalanced())
 
 if __name__ == "__main__":
   main()

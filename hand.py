@@ -56,6 +56,31 @@ class Hand(object):
 				suitCards.append(card)
 		return suitCards
 
+	def numDoubletons(self):
+		val = 0
+		cCount = 0
+		dCount = 0
+		hCount = 0
+		sCount = 0
+		for card in self.cards:
+			if (card.suit == 'C'):
+				cCount += 1
+			elif (card.suit == 'D'):
+				dCount += 1
+			elif (card.suit == 'H'):
+				hCount += 1
+			else:
+				sCount += 1
+		if (cCount == 2):
+			val += 1
+		if (dCount == 2):
+			val += 1
+		if (hCount == 2):
+			val += 1
+		if (sCount == 2):
+			val += 1
+		return val
+
 	def numSingletons(self):
 		val = 0
 		cCount = 0
@@ -105,6 +130,12 @@ class Hand(object):
 		if (sCount == 0):
 			val += 1
 		return val
+
+	def isBalanced(self):
+		voids = self.numVoids()
+		singletons = self.numSingletons()
+		doubletons = self.numDoubletons()
+		return (voids == 0) and (singletons == 0) and (doubletons <= 1)
 
 
 
