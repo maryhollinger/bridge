@@ -8,13 +8,13 @@ class Player(object):
   """
   suits = 'CDHSN'
 
-  def __init__(self, isAI, pnum, hnd):
+  def __init__(self, isAI, pnum, hnd, rnd):
     self.AI = isAI
     self.num = num
     self.tricks = [0,0,0,0,0]
     self.hand = hnd
     self.points = hnd.points()
-
+    self.round = rnd
 
   def __str__(self):
     if self.AI:
@@ -34,7 +34,15 @@ class Player(object):
   def evalHand(self):
     if
 
-  def getPBids(self):
+  def getPairBids(self):
+    bidsf = round.getBids()
+    pairBids = []
+    for i in range(len(bidsf)):
+      if i % 2 != self.num % 2:
+      pairBids.append(bidsf[i])
+    return pairBids
+
+
 
 
 
