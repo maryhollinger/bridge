@@ -1,7 +1,7 @@
 class Bid(object):
   """
   Each bid has a suit in {Clubs, Diamonds, Hearts, Spades, NoTrump} and a level
-  in range 1-7 inclusive.
+  in range 1-7 inclusive. A pass is "None".
   """
   def __init__(self, string):
     self.level = string[0]
