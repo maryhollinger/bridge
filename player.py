@@ -21,7 +21,10 @@ class Player(object):
     print('player number ' + self.num + " is " + h + 'an AI')
 
   def evalHand(self):
-    points =
+    points = 0
+    for c in hand.cards():
+        points += c.value()
+
 
   def getPBids(self):
 
